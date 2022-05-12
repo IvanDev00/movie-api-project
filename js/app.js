@@ -1,59 +1,67 @@
-const API_KEY = "1bfdbff05c2698dc917dd28c08d41096";
-const BASE_URL = "https://api.themoviedb.org/3/";
-let click = document.getElementById("view");
+import renderMovie from "./modules/movie.js";
 
-function showlist(data) {
-  const row = document.querySelector(".row");
-
-  row.innerHTML = data
-    .map((movie) => {
-      return `
-          <a onclick="return false" ondblclick="location = this.href" onclick="clickHandler(${movie.id})" href="/single-movie.html">
-                <div>${movie.title}</div>
-             </a>`;
-    })
-    .join("");
+function App() {
+   renderMovie();
 }
 
-const searchAnime = async (event) => {
-  event.preventDefault();
+App();
 
-  let query = document.getElementById("search").value;
+// const API_KEY = "1bfdbff05c2698dc917dd28c08d41096";
+// const BASE_URL = "https://api.themoviedb.org/3/";
+// let click = document.getElementById("view");
 
-  const response = await axios.get(
-    query
-      ? `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}`
-      : `${BASE_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
-  );
-  const data = response.data.results;
-  showlist(data);
-};
+// function showlist(data) {
+//   const row = document.querySelector(".row");
 
-function pageLoaded() {
-  const form = document.getElementById("search_form");
-  form.addEventListener("submit", searchAnime);
-}
+//   row.innerHTML = data
+//     .map((movie) => {
+//       return `
+//           <a onclick="return false" ondblclick="location = this.href" onclick="clickHandler(${movie.id})" href="/single-movie.html">
+//                 <div>${movie.title}</div>
+//              </a>`;
+//     })
+//     .join("");
+// }
 
-if (window.location.pathname.split("/")[1]) {
-}
-window.addEventListener("load", searchAnime);
+// const searchAnime = async (event) => {
+//   event.preventDefault();
 
-pageLoaded();
+//   let query = document.getElementById("search").value;
 
-const clickHandler = async (id) => {
-  const response = await axios.get(
-    `${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`,
-  );
-  const data = response.data;
+//   const response = await axios.get(
+//     query
+//       ? `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}`
+//       : `${BASE_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
+//   );
+//   const data = response.data.results;
+//   showlist(data);
+// };
 
-  singleData(data);
-};
+// function pageLoaded() {
+//   const form = document.getElementById("search_form");
+//   form.addEventListener("submit", searchAnime);
+// }
 
-function singleData(data) {
-  const { title, popularity, vote_count } = data;
-  const single = document.querySelector("#single-movie");
+// if (window.location.pathname.split("/")[1]) {
+// }
+// window.addEventListener("load", searchAnime);
 
-  console.log(title);
-}
+// pageLoaded();
 
-singleData();
+// const clickHandler = async (id) => {
+//   const response = await axios.get(
+//     `${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`,
+//   );
+//   const data = response.data;
+
+//   singleData(data);
+// };
+
+// function singleData(data) {
+//   const { title, popularity, vote_count } = data;
+//   const single = document.querySelector("#single-movie");
+
+//   console.log(title);
+// }
+
+// singleData();
