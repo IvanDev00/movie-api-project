@@ -1,27 +1,21 @@
-import config from "./config.js";
-
-const BASE_URL = config.BASE_URL;
-const API_KEY = config.API_KEY;
+import fetchData from "./fetchData.js";
+const row = document.querySelector(".row");
 
 const getSingleMovie = async () => {
-   let data = [];
-   let loading = false;
-   let error = "";
+   const pathName = window.location.href.split("/")[3];
+   const movieId = pathName.split("?")[1].split("=")[1];
+   const { data } = await fetchData("single", "", movieId);
 
-   loading = true;
-   try {
-      const response = await await axios.get(
-         `${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`
-      );
-      const responseData = response.data?.results;
-      data = responseData;
-   } catch (error) {
-      error = error;
-   } finally {
-      loading = false;
-   }
-
-   return { data, loading, error };
+   renderMovie(data);
 };
 
-export default getSingleMovie;
+const renderMovie = (data) => {
+   row.innerHTML = `
+                <a href="index.html">
+                back
+                </a>
+               <h3>${data.title}</h3>
+           `;
+};
+
+getSingleMovie();
