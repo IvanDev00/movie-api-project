@@ -1,0 +1,152 @@
+.card {
+  width: 18rem;
+  height: 26.5rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--grey-100);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  width: 18rem;
+  height: 16rem;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  background-color: var(--grey-200);
+}
+
+.card__details {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card__header {
+  font-size: 1.2rem;
+  color: var(--grey-300);
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.card__genre {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Loading State */
+
+.card-loading {
+  width: 18rem;
+  height: 26.5rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--grey-100);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image-loading {
+  width: 100%;
+  height: 16rem;
+  border-radius: 0.8rem;
+  background-color: var(--grey-200);
+}
+
+.card__details-loading {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card__content-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card__header-loading {
+  width: 36%;
+  height: 1.3rem;
+  background-color: var(--grey-200);
+}
+
+.card__title-loading {
+  width: 80%;
+  height: 1.6rem;
+  background-color: var(--grey-200);
+}
+
+.card__genre-loading {
+  width: 60%;
+  height: 1.4rem;
+  background-color: var(--grey-200);
+}
+
+/* Loading State */
+
+.card__image-loading,
+.card__header-loading,
+.card__title-loading,
+.card__genre-loading {
+  background: linear-gradient(
+    120deg,
+    #e5e5e5 30%,
+    #ffffff 38%,
+    #f2f2f2 40%,
+    #e5e5e5 48%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+
+@keyframes load {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (min-width: 866px) {
+  .card {
+    width: 21.2rem;
+    height: 29.4rem;
+    padding: 1.4rem 1.6rem;
+  }
+  .card__image {
+    width: 18.2rem;
+    height: 18rem;
+  }
+  /* Loading State */
+  .card-loading {
+    width: 21.2rem;
+    height: 29.4rem;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .card__image-loading {
+    width: 18.2rem;
+    height: 18rem;
+  }
+  /* Loading State */
+}

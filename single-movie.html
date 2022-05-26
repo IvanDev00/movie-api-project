@@ -1,14 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-   </head>
-   <body>
-      <div class="row"></div>
-      <script type="module" src="./js/modules/singleMovie.js"></script>
-   </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/card.css" />
+    <link rel="stylesheet" href="./css/singleMovie.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <header class="nav__content">
+        <a href="/index.html" class="nav__return">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.828 12L15.778 16.95L14.364 18.364L8 12L14.364 5.63599L15.778 7.04999L10.828 12Z"
+              fill="#7476ED"
+            />
+          </svg>
+          Return to Homepage
+        </a>
+      </header>
+      <div class="divider"></div>
+    </nav>
+    <main class="single-container">
+      <div class="movie-data-row">
+        <div class="single-movie__content-loading">
+          <div class="single-movie__bg-loading">
+            <div class="single-movie__bg-img-loading"></div>
+          </div>
+          <div class="single-movie__main-info">
+            <div class="single-movie__poster-loading">
+              <div class="single-movie__poster-img-loading"></div>
+            </div>
+            <div class="single-movie__info">
+              <div class="single-movie__title-loading">T</div>
+              <div class="single-movie__other">
+                <div class="single-movie__label-loading loading-label-1">
+                  Genre
+                </div>
+                <div class="single-movie__value-loading loading-value-1">A</div>
+              </div>
+              <div class="single-movie__other">
+                <div class="single-movie__label-loading loading-label-2">
+                  Status
+                </div>
+                <div class="single-movie__value-loading loading-value-2">R</div>
+              </div>
+              <div class="single-movie__other">
+                <div class="single-movie__label-loading loading-label-3">
+                  Release Date
+                </div>
+                <div class="single-movie__value-loading loading-value-3">2</div>
+              </div>
+            </div>
+          </div>
+          <div class="single-movie__story">
+            <h1 class="single-movie__story-label-loading">Story</h1>
+            <p class="single-movie__story-content-loading story-loading-1">
+              ${data.overview || "N/A"}
+            </p>
+            <p class="single-movie__story-content-loading story-loading-2">
+              ${data.overview || "N/A"}
+            </p>
+            <p class="single-movie__story-content-loading story-loading-3">
+              ${data.overview || "N/A"}
+            </p>
+            <p class="single-movie__story-content-loading story-loading-4">
+              ${data.overview || "N/A"}
+            </p>
+            <p class="single-movie__story-content-loading story-loading-5">
+              ${data.overview || "N/A"}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="divider single-divider"></div>
+      <div class="similar-row">
+        <h1 class="single-movie__story-label">Similar Movies</h1>
+        <div class="similar-movies-row">
+          <div class="card-loading">
+            <div class="card__image-loading"></div>
+            <div class="card__details-loading">
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__title-loading"></div>
+              </div>
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__genre-loading"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-loading">
+            <div class="card__image-loading"></div>
+            <div class="card__details-loading">
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__title-loading"></div>
+              </div>
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__genre-loading"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-loading">
+            <div class="card__image-loading"></div>
+            <div class="card__details-loading">
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__title-loading"></div>
+              </div>
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__genre-loading"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-loading">
+            <div class="card__image-loading"></div>
+            <div class="card__details-loading">
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__title-loading"></div>
+              </div>
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__genre-loading"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-loading">
+            <div class="card__image-loading"></div>
+            <div class="card__details-loading">
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__title-loading"></div>
+              </div>
+              <div class="card__content-loading">
+                <div class="card__header-loading"></div>
+                <div class="card__genre-loading"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <img src="./assets/logo/whiteLogo.png" alt="White Logo" />
+      <h1 class="footer__primary-text">Movie</h1>
+      <h2 class="footer__secondary-text">
+        Copyright © 2022 - All right reserved
+      </h2>
+    </footer>
+    <script type="module" src="./js/modules/singleMovie.js"></script>
+  </body>
 </html>
