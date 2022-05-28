@@ -9,7 +9,6 @@ const renderMovie = async () => {
   const { data } = await fetchData("upcoming");
 
   renderMovieList(data.results);
-  console.log(data.results);
 };
 
 export default renderMovie;
@@ -22,7 +21,12 @@ const searchHandler = async (event) => {
   if (!query) {
     renderMovie();
   }
-  renderMovieList(data.results);
+
+  if (data.results.length >= 1) {
+    renderMovieList(data.results);
+  } else {
+    renderNoResultFound(query);
+  }
 };
 
 form.addEventListener("submit", searchHandler);
@@ -34,7 +38,7 @@ const renderMovieList = (data) => {
             <a href="single-movie.html?movie=${
               movie.id
             }" onclick="return false" ondblclick="location=this.href">
-            <div class="card">
+            <div class="card hvr">
                <img class="card__image" src="${
                  IMAGE_BASE_URL + movie.poster_path
                }" alt="" />
@@ -57,4 +61,10 @@ const renderMovieList = (data) => {
            `;
     })
     .join("");
+};
+
+const renderNoResultFound = (query) => {
+  row.innerHTML = `
+      <h1 class="no-result">No Result Found for "${query}"</h1>
+  `;
 };

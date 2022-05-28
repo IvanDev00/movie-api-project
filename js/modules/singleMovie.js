@@ -68,7 +68,7 @@ const renderSimilarMovie = (data) => {
           <a href="single-movie.html?movie=${
             movie.id
           }" onclick="return false" ondblclick="location=this.href">
-          <div class="card">
+          <div class="card hvr">
              <img class="card__image" src="${
                IMAGE_BASE_URL + movie.poster_path
              }" alt="" />
